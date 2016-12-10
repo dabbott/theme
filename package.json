@@ -4,6 +4,7 @@
   "main": "index.js",
   "description": "Style your components in one place.",
   "dependencies": {
+    "babel-preset-react-native": "^1.9.0",
     "hoist-non-react-statics": "^1.0.5",
     "lodash": "^4.10.1"
   },
@@ -13,17 +14,29 @@
   },
   "devDependencies": {
     "babel": "^6.3.26",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-plugin-lodash": "^3.2.10",
     "babel-preset-react-native": "^1.9.0",
     "chai": "^3.4.1",
     "deep-freeze": "0.0.1",
     "enzyme": "^2.0.0-rc1",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint-plugin-react-native": "^2.2.0",
     "mocha": "^2.3.4",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-native-mock": "^0.2.5"
+    "react-native-mock": "^0.2.5",
+    "webpack": "^1.14.0"
   },
   "scripts": {
-    "test": "mocha -R spec --require test-utils/setup.js --require react-native-mock/mock.js --compilers js:babel-core/register $(find . -name '*.spec.js' ! -ipath '*node_modules*')"
+    "test": "mocha -R spec --require test-utils/setup.js --require react-native-mock/mock.js --compilers js:babel-core/register $(find . -name '*.spec.js' ! -ipath '*node_modules*')",
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "license": "BSD-3-Clause",
   "maintainers": [
@@ -60,5 +73,4 @@
       "name": "zrumenjak"
     }
   ]
-
 }
